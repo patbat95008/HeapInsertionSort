@@ -1,0 +1,54 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.1
+date	2014.05.02.04.35.10;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@/* By Patrick Russell
+ *    pcrussel@@ucsc.edu
+ *
+ * NAME: insertionSort.c
+ *
+ * PURPOSE: Sort a series of keys from
+ *          largest to smallest
+ */
+
+void insertionSort(int keys[], int numKeys){
+   int index = 1;
+   int j_index = 0;
+   int tmp = 0;
+   for(index = 1; index <= numKeys; index++){
+      j_index = index;
+      while(j_index > 0 && keys[j_index-1] > keys[j_index]){
+         tmp = keys[j_index];
+         keys[j_index] = keys[j_index - 1];
+         keys[j_index - 1] = tmp;
+	 j_index--;
+      }
+   }
+   printSort(keys, numKeys);
+}
+
+void printSort(int keys[], int numKeys){
+   int index = 0;
+   for(index = 0; index < numKeys; index++){
+      printf("insertionSort keys[%d] = %d\n", index, keys[index]);
+   }
+}
+@
